@@ -8,7 +8,7 @@ export default function Home() {
   const user1 = useRef(null)
   const user2 = useRef(null)
   const [servers, setServers] = useState({
-    iceservers: [
+    iceServers: [
       {
         urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302']
       }
@@ -16,7 +16,7 @@ export default function Home() {
   })
   // const [stream, setStream] = useState()
   // const [remoteStream, setRemoteStream] = useState(new MediaStream())
-  const [peerConnection, setPeerConnection] = useState(new RTCPeerConnection(servers))
+  // const [peerConnection, setPeerConnection] = useState(new RTCPeerConnection(servers))
   const [retry, setRetry] = useState(0)
   
 
@@ -35,9 +35,12 @@ export default function Home() {
 
   // console.log(retry)
 
+  let peerConnection;
+
   const createOffer = async (stream) => {
     // setPeerConnection(new RTCPeerConnection())
     const remoteStream = new MediaStream()
+    peerConnection = new RTCPeerConnection(servers)
     // setRemoteStream(new MediaStream())
     user2.current.srcObject = remoteStream
 
