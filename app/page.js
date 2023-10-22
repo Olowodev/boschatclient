@@ -245,7 +245,7 @@ export default function Home() {
       //   userStreamRef.current.getTracks()[1],
       //   userStreamRef.current
       // )
-      rtcConnectionRef.current.setRemoteDescription(JSON.stringify(offer))
+      rtcConnectionRef.current.setRemoteDescription(JSON.parse(offer))
 
       const answer = await rtcConnectionRef.current.createAnswer()
       rtcConnectionRef.current.setLocalDescription(answer)
