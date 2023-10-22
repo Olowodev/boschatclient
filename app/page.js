@@ -245,7 +245,7 @@ export default function Home() {
       //   userStreamRef.current.getTracks()[1],
       //   userStreamRef.current
       // )
-      rtcConnectionRef.current.setRemoteDescription(new RTCSessionDescription(offer))
+      rtcConnectionRef.current.setRemoteDescription(offer)
 
       const answer = await rtcConnectionRef.current.createAnswer()
       rtcConnectionRef.current.setLocalDescription(answer)
