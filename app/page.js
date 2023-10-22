@@ -206,7 +206,7 @@ export default function Home() {
       //   userStreamRef.current
       // )
       let offer = await rtcConnectionRef.current.createOffer()
-      offer = {...offer, sdp: `${offer.sdp}\n`}
+      // offer = {...offer, sdp: `${offer.sdp}\n`}
       // console.log(offer)
       rtcConnectionRef.current.setLocalDescription(offer)
       socket.emit('offer', offer, "1234")
@@ -245,7 +245,7 @@ export default function Home() {
       //   userStreamRef.current.getTracks()[1],
       //   userStreamRef.current
       // )
-      rtcConnectionRef.current.setRemoteDescription(offer)
+      rtcConnectionRef.current.setRemoteDescription(JSON.stringify(offer))
 
       const answer = await rtcConnectionRef.current.createAnswer()
       rtcConnectionRef.current.setLocalDescription(answer)
