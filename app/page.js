@@ -57,10 +57,11 @@ export default function Home() {
 
     
       stream.getTracks().forEach((track) => {
-        peerConnection.addTransceiver(track, stream)
+        peerConnection.addTrack(track, stream)
       })
 
     peerConnection.ontrack = (event) => {
+      console.log(event)
       event.streams[0].getTracks().forEach((track) => {
         remoteStream.addTrack(track)
       })
