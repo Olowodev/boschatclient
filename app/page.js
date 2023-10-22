@@ -205,9 +205,9 @@ export default function Home() {
       //   userStreamRef.current.getTracks()[1],
       //   userStreamRef.current
       // )
-      const offer = await rtcConnectionRef.current.createOffer()
-      const updatedOffer = `${offer} + \n`
-      console.log(offer)
+      let offer = await rtcConnectionRef.current.createOffer()
+      offer = {...offer, sdp: `${offer.sdp}\n`}
+      // console.log(offer)
       rtcConnectionRef.current.setLocalDescription(offer)
       socket.emit('offer', offer, "1234")
     }
