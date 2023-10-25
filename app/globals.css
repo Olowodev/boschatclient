@@ -108,3 +108,16 @@ a {
   transform: scaleX(-1);
   object-fit: cover;
 }
+
+video {
+  width: 100%;
+  transform: scaleX(-1);
+  height: 500px;
+  object-fit: cover;
+}
+
+.videoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
