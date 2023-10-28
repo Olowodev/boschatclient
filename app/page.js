@@ -142,8 +142,8 @@ export default function Home () {
       <button onClick={getUserMedia}>Get access to camera</button>
       <br />
       <div className="videoContainer">
-      <video style={{ margin: 5,}} ref={localVideoRef} muted autoPlay></video>
-      <video style={{ margin: 5,}} ref={remoteVideoRef} autoPlay></video>
+      <video style={{ margin: 5,}} ref={localVideoRef} muted autoPlay playsInline></video>
+      <video style={{ margin: 5,}} ref={remoteVideoRef} autoPlay playsInline></video>
       </div>
       <br />
       <button onClick={createOffer}>Create Offer</button>
