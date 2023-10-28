@@ -18,7 +18,7 @@ export default function Home () {
     const contraints = {
       audio: true,
       video: {
-        facingMode: 'environment'
+        facingMode: 'user'
       }
     }
     console.log('getting media')
@@ -120,8 +120,10 @@ export default function Home () {
 
   const getUserMedia = () => {
     const contraints = {
-      audio: false,
-      video: true
+      audio: true,
+      video: {
+        facingMode: 'user'
+      }
     }
     console.log('getting media')
 
