@@ -1,6 +1,5 @@
 "use client"
 
-import { userAgent } from "next/server"
 import { useEffect, useRef, useState } from "react"
 import io from 'socket.io-client'
 
@@ -9,7 +8,7 @@ const socket = io("http://localhost:5000")
 export default function Home () {
   const localVideoRef = useRef()
   const remoteVideoRef = useRef()
-  const pc = useRef(new RTCPeerConnection(null))
+  const pc = useRef()
   const textRef = useRef()
   const [stream, setStream] = useState()
   const candidates = useRef([])
