@@ -17,7 +17,9 @@ export default function Home () {
   useEffect(() => {
     const contraints = {
       audio: true,
-      video: true
+      video: {
+        facingMode: 'environment'
+      }
     }
     console.log('getting media')
 
