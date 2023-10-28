@@ -13,6 +13,7 @@ export default function Home () {
   const textRef = useRef()
   const [stream, setStream] = useState()
   const candidates = useRef([])
+  const mediaRecorder = useRef()
 
   useEffect(() => {
     const contraints = {
@@ -59,6 +60,8 @@ export default function Home () {
 
     _pc.ontrack = (e) => {
       remoteVideoRef.current.srcObject = e.streams[0]
+      // console.log(e.streams[0].getAudioTracks())
+      mediaRecorder.current = new MediaRecorder(e.streams[0])
     }
 
     pc.current = _pc
